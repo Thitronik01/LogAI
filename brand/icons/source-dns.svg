@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-labelledby="title">
+  <title id="title">Source dns</title>
+  <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="miter">
+    <circle cx="12" cy="5" r="2"/>
+    <path d="M12 7v4 M5 15v-4h14v4"/>
+    <path d="M3 16h4v4H3z M17 16h4v4h-4z"/>
+  </g>
+</svg>

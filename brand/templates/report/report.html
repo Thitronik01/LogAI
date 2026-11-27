@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Network evidence report · LogAI</title>
+  <link rel="icon" href="../../favicon/favicon.svg">
+  <link rel="stylesheet" href="../../fonts/fonts.css">
+  <link rel="stylesheet" href="../../tokens/tokens.css">
+  <link rel="stylesheet" href="report.css">
+</head>
+<body>
+  <main>
+    <header class="cover">
+      <div class="mast">
+        <img class="logo-light" src="../../logo/logai-logo-light.svg" width="119" height="36" alt="LogAI">
+        <img class="logo-dark" src="../../logo/logai-logo-dark.svg" width="119" height="36" alt="LogAI">
+        <span>Synthetic audit report</span>
+      </div>
+      <h1>Network evidence report</h1>
+      <p class="dek">Observed AI service activity in DNS, proxy and firewall exports.</p>
+      <dl class="metadata">
+        <div><dt>Observation window</dt><dd>15 October 2026 · 09:00–10:00 UTC</dd></div>
+        <div><dt>Policy snapshot</dt><dd>Sample policy · 2026-10-01</dd></div>
+      </dl>
+    </header>
+
+    <section aria-labelledby="summary">
+      <h2 id="summary">Summary</h2>
+      <p>Two services have a recorded connection. A third appears in DNS lookups only. The sample contains 18 matching records across the three services, including two firewall records with upload byte counts.</p>
+    </section>
+
+    <section aria-labelledby="findings">
+      <h2 id="findings">Findings by service</h2>
+      <article>
+        <header><h3>Aster Compose</h3><code>compose.aster.test</code></header>
+        <dl class="classification">
+          <div><dt>Evidence</dt><dd class="evidence-hint"><img src="../../icons/evidence-hint.svg" alt="">Hint</dd></div>
+          <div><dt>Policy</dt><dd class="status-unlisted"><img src="../../icons/status-unlisted.svg" alt="">Unlisted</dd></div>
+        </dl>
+        <p>The resolver recorded 12 lookups for this hostname. A lookup alone leaves the connection outcome unknown.</p>
+        <p class="reference">Source <code>dns.csv</code> · rows 3–14 · DNS question name</p>
+      </article>
+      <article>
+        <header><h3>Linden Assist</h3><code>assist.linden.test</code></header>
+        <dl class="classification">
+          <div><dt>Evidence</dt><dd class="evidence-connection"><img src="../../icons/evidence-connection.svg" alt="">Connection</dd></div>
+          <div><dt>Policy</dt><dd class="status-sanctioned"><img src="../../icons/status-sanctioned.svg" alt="">Approved</dd></div>
+        </dl>
+        <p>The proxy recorded four successful tunnels to this hostname. These records give the destination and connection outcome.</p>
+        <p class="reference">Source <code>proxy.csv</code> · rows 6–9 · CONNECT target and outcome</p>
+      </article>
+      <article>
+        <header><h3>Mica Studio</h3><code>api.mica.test</code></header>
+        <dl class="classification">
+          <div><dt>Evidence</dt><dd class="evidence-volume"><img src="../../icons/evidence-volume.svg" alt="">Volume</dd></div>
+          <div><dt>Policy</dt><dd class="status-unsanctioned"><img src="../../icons/status-unsanctioned.svg" alt="">Unapproved</dd></div>
+        </dl>
+        <p>Two connections match the TLS server name. Their client-to-server counters total <strong>18,432 bytes</strong> of upload volume. The sample policy lists this service as unapproved.</p>
+        <p class="reference">Source <code>firewall.csv</code> · rows 3–4 · TLS server name and outbound bytes</p>
+      </article>
+    </section>
+
+    <section class="methods" aria-labelledby="limits">
+      <h2 id="limits">Detection limits</h2>
+      <p>These exports describe network activity during the stated hour. They cannot establish which person used a service or what a request contained. Byte counters can include protocol overhead.</p>
+      <p>Visibility depends on the log source, the captured hostname and the catalogue snapshot. An unmatched record may concern an unknown service. The policy label describes the organisation’s list for that service. It does not determine the purpose of a connection.</p>
+    </section>
+    <section aria-labelledby="catalogue">
+      <h2 id="catalogue">Catalogue snapshot</h2>
+      <dl class="metadata">
+        <div><dt>Snapshot</dt><dd>Example catalogue · 2026-10-14</dd></div>
+        <div><dt>Coverage</dt><dd>3 fictional services · 3 exact hostname rules</dd></div>
+      </dl>
+      <p>All three entries are synthetic and unreviewed. Each hostname uses the reserved <code>.test</code> suffix. The snapshots and records in this report are illustrative.</p>
+    </section>
+    <section aria-labelledby="inputs">
+      <h2 id="inputs">Input statistics</h2>
+      <table>
+        <caption>Data rows per synthetic export, excluding the header</caption>
+        <thead><tr><th scope="col">Source</th><th scope="col">Input</th><th scope="col">Parsed</th><th scope="col">Matched</th><th scope="col">Skipped</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">DNS</th><td>24</td><td>24</td><td>12</td><td>0</td></tr>
+          <tr><th scope="row">Proxy</th><td>16</td><td>15</td><td>4</td><td>1</td></tr>
+          <tr><th scope="row">Firewall</th><td>8</td><td>6</td><td>2</td><td>2</td></tr>
+        </tbody>
+        <tfoot><tr><th scope="row">Total</th><td>48</td><td>45</td><td>18</td><td>3</td></tr></tfoot>
+      </table>
+      <p>Of the 45 parsed rows, 27 had no catalogue match. One proxy row had an invalid timestamp and two firewall rows lacked a destination.</p>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-labelledby="title">
+  <title id="title">Export</title>
+  <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="miter">
+    <path d="M11 5H4v15h15v-7 M11 13l9-9 M14 4h6v6"/>
+  </g>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-labelledby="title">
+  <title id="title">Evidence connection</title>
+  <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="miter">
+    <path d="M7 4H3v12h4 M17 8h4v12h-4 M7 12h10"/>
+  </g>
+</svg>

@@ -1,0 +1,79 @@
+/* Generated from tokens.json by generate.py. */
+:root {
+  --logai-color-light-surface: #FBF9F2;
+  --logai-color-light-surface-alt: #F1EFE5;
+  --logai-color-light-text: #292723;
+  --logai-color-light-muted: #5C5A51;
+  --logai-color-light-accent: #145C51;
+  --logai-color-light-rule: #B5B1A4;
+  --logai-color-light-evidence-hint: #5F5A49;
+  --logai-color-light-evidence-connection: #24576C;
+  --logai-color-light-evidence-volume: #145C51;
+  --logai-color-light-status-sanctioned: #2C5A43;
+  --logai-color-light-status-unsanctioned: #794724;
+  --logai-color-light-status-unlisted: #5B5260;
+  --logai-color-dark-surface: #202522;
+  --logai-color-dark-surface-alt: #2A312D;
+  --logai-color-dark-text: #F3F0E7;
+  --logai-color-dark-muted: #C4C2B8;
+  --logai-color-dark-accent: #89D1C2;
+  --logai-color-dark-rule: #666F67;
+  --logai-color-dark-evidence-hint: #D4C8A9;
+  --logai-color-dark-evidence-connection: #A2CCD9;
+  --logai-color-dark-evidence-volume: #89D1C2;
+  --logai-color-dark-status-sanctioned: #A6D6B7;
+  --logai-color-dark-status-unsanctioned: #EABE99;
+  --logai-color-dark-status-unlisted: #CEC1D4;
+  --logai-font-family-text: "Source Serif 4", Georgia, serif;
+  --logai-font-family-mono: "Source Code Pro", Consolas, monospace;
+  --logai-font-size-caption: 0.8125rem;
+  --logai-font-size-small: 0.9375rem;
+  --logai-font-size-body: 1.0625rem;
+  --logai-font-size-subhead: 1.375rem;
+  --logai-font-size-heading: 2rem;
+  --logai-font-size-title: 3.75rem;
+  --logai-font-weight-regular: 400;
+  --logai-font-weight-medium: 550;
+  --logai-font-weight-wordmark: 590;
+  --logai-space-1: 0.25rem;
+  --logai-space-2: 0.5rem;
+  --logai-space-3: 0.75rem;
+  --logai-space-4: 1rem;
+  --logai-space-5: 1.5rem;
+  --logai-space-6: 2rem;
+  --logai-space-7: 3rem;
+  --logai-space-8: 4rem;
+  --logai-radius-none: 0;
+  --logai-radius-small: 2px;
+  --logai-stroke-rule: 1px;
+  --logai-stroke-icon: 2px;
+  --logai-surface: var(--logai-color-light-surface);
+  --logai-surface-alt: var(--logai-color-light-surface-alt);
+  --logai-text: var(--logai-color-light-text);
+  --logai-muted: var(--logai-color-light-muted);
+  --logai-accent: var(--logai-color-light-accent);
+  --logai-rule: var(--logai-color-light-rule);
+  --logai-evidence-hint: var(--logai-color-light-evidence-hint);
+  --logai-evidence-connection: var(--logai-color-light-evidence-connection);
+  --logai-evidence-volume: var(--logai-color-light-evidence-volume);
+  --logai-status-sanctioned: var(--logai-color-light-status-sanctioned);
+  --logai-status-unsanctioned: var(--logai-color-light-status-unsanctioned);
+  --logai-status-unlisted: var(--logai-color-light-status-unlisted);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --logai-surface: var(--logai-color-dark-surface);
+    --logai-surface-alt: var(--logai-color-dark-surface-alt);
+    --logai-text: var(--logai-color-dark-text);
+    --logai-muted: var(--logai-color-dark-muted);
+    --logai-accent: var(--logai-color-dark-accent);
+    --logai-rule: var(--logai-color-dark-rule);
+    --logai-evidence-hint: var(--logai-color-dark-evidence-hint);
+    --logai-evidence-connection: var(--logai-color-dark-evidence-connection);
+    --logai-evidence-volume: var(--logai-color-dark-evidence-volume);
+    --logai-status-sanctioned: var(--logai-color-dark-status-sanctioned);
+    --logai-status-unsanctioned: var(--logai-color-dark-status-unsanctioned);
+    --logai-status-unlisted: var(--logai-color-dark-status-unlisted);
+  }
+}
