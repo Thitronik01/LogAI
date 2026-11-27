@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-labelledby="title">
+  <title id="title">Registerblatt</title>
+  <style>
+    :root { color: #75486F; }
+    #dark:target ~ g { color: #E3AFD8; }
+  </style>
+  <view id="dark" viewBox="0 0 32 32"/>
+  <g fill="currentColor">
+    <path d="M2 8a2 2 0 0 1 2-2h6l3 3h13v4H8a2 2 0 0 0-2 2v9H4a2 2 0 0 1-2-2z M9 16h10l3-4h6a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H11a2 2 0 0 1-2-2z"/>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-labelledby="title">
+  <title id="title">Randbeleg</title>
+  <style>
+    :root { color: #145C51; }
+    #dark:target ~ g { color: #89D1C2; }
+  </style>
+  <view id="dark" viewBox="0 0 32 32"/>
+  <g fill="currentColor">
+    <path d="M2 4h10v4H6v8h6v4H2z M10 10h20v4H10z M10 23h14v3H10z"/>
+  </g>
+</svg>

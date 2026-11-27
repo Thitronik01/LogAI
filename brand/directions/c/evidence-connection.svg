@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-labelledby="title">
+  <title id="title">Connection</title>
+  <style>
+    :root { color: #322735; }
+    #dark:target ~ g { color: #F2E8F0; }
+  </style>
+  <view id="dark" viewBox="0 0 24 24"/>
+  <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+    <path d="M9 14H4V6h7l2 2h2v3 M15 10h5v8h-7l-2-2H9v-3 M8 12h8"/>
+  </g>
+</svg>
