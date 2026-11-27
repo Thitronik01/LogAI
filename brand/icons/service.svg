@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-labelledby="title">
+  <title id="title">Service</title>
+  <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="miter">
+    <path d="M3 8h7v8H3z M14 3h7v6h-7z M14 15h7v6h-7z M10 12h2 M12 6v12 M12 6h2 M12 18h2"/>
+  </g>
+</svg>

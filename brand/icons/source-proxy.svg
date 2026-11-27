@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-labelledby="title">
+  <title id="title">Source proxy</title>
+  <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="miter">
+    <path d="M2 8h11l-3-3 M22 16H11l3 3 M16 4v7 M8 13v7"/>
+  </g>
+</svg>

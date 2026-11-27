@@ -1,0 +1,78 @@
+:root { color-scheme: light dark; }
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  color: var(--logai-text);
+  background: var(--logai-surface);
+  font: var(--logai-font-size-body)/1.55 var(--logai-font-family-text);
+}
+main { max-width: 60rem; margin: auto; padding: var(--logai-space-6) clamp(1rem, 5vw, 4rem) var(--logai-space-8); }
+h1, h2, h3, p, dl, dd { margin: 0; }
+h1, h2, h3, strong { font-weight: var(--logai-font-weight-medium); }
+.mast, article header { display: flex; align-items: center; justify-content: space-between; gap: var(--logai-space-4); }
+.mast { border-bottom: var(--logai-stroke-rule) solid var(--logai-rule); padding-bottom: var(--logai-space-4); }
+.mast img { display: block; }
+.mast .logo-dark { display: none; }
+.mast span, dt, .reference, code, caption, td, table thead {
+  font-family: var(--logai-font-family-mono);
+  font-size: var(--logai-font-size-caption);
+}
+.mast span, dt, .reference, caption { color: var(--logai-muted); }
+h1 { margin-top: var(--logai-space-7); font-size: clamp(2.6rem, 7vw, var(--logai-font-size-title)); line-height: 1.02; letter-spacing: -.045em; }
+.dek { margin-top: var(--logai-space-3); font-size: var(--logai-font-size-subhead); line-height: 1.35; }
+.metadata, .classification { display: flex; flex-wrap: wrap; gap: var(--logai-space-3) var(--logai-space-7); }
+.metadata { margin-block: var(--logai-space-5); }
+dt { margin-bottom: var(--logai-space-1); }
+section { border-top: var(--logai-stroke-rule) solid var(--logai-rule); padding-block: var(--logai-space-5); }
+h2 { font-size: var(--logai-font-size-heading); letter-spacing: -.035em; line-height: 1.15; }
+h3 { font-size: var(--logai-font-size-subhead); line-height: 1.2; }
+p { max-width: 73ch; margin-top: var(--logai-space-3); }
+article { padding: var(--logai-space-4) 0 var(--logai-space-4) var(--logai-space-4); border-left: var(--logai-stroke-icon) solid var(--logai-accent); margin-top: var(--logai-space-5); }
+article header { flex-wrap: wrap; gap: var(--logai-space-1) var(--logai-space-4); }
+article header code { color: var(--logai-muted); overflow-wrap: anywhere; }
+.classification { margin-top: var(--logai-space-3); gap: var(--logai-space-3) var(--logai-space-6); }
+.classification div, .classification dd { display: flex; align-items: center; gap: var(--logai-space-2); }
+.classification dt { margin: 0; }
+.classification dd { font-weight: var(--logai-font-weight-medium); }
+.classification img { width: 1.25rem; height: 1.25rem; }
+.evidence-hint { color: var(--logai-evidence-hint); }
+.evidence-connection { color: var(--logai-evidence-connection); }
+.evidence-volume { color: var(--logai-evidence-volume); }
+.status-sanctioned { color: var(--logai-status-sanctioned); }
+.status-unsanctioned { color: var(--logai-status-unsanctioned); }
+.status-unlisted { color: var(--logai-status-unlisted); }
+.methods { border-top: var(--logai-stroke-icon) solid var(--logai-accent); }
+table { width: 100%; border-collapse: collapse; margin-top: var(--logai-space-4); font-variant-numeric: tabular-nums; }
+caption { text-align: left; margin-bottom: var(--logai-space-2); }
+th, td { text-align: right; padding: var(--logai-space-2); border-bottom: var(--logai-stroke-rule) solid var(--logai-rule); }
+th:first-child { text-align: left; }
+thead, tfoot { background: var(--logai-surface-alt); }
+th { font-weight: var(--logai-font-weight-medium); }
+@media screen and (prefers-color-scheme: dark) {
+  .mast .logo-light { display: none; }
+  .mast .logo-dark { display: block; }
+  .classification img { filter: invert(1); }
+}
+@media (max-width: 480px) {
+  .mast { align-items: flex-start; }
+  .mast span { max-width: 12ch; text-align: right; }
+  th, td { padding-inline: var(--logai-space-1); }
+  .classification { gap: var(--logai-space-2) var(--logai-space-3); }
+}
+@page { size: A4; margin: 16mm 18mm; }
+@media print {
+  :root { color-scheme: light; }
+  body { background: white; font-size: 11pt; line-height: 1.35; }
+  main { max-width: none; padding: 0; }
+  h1 { margin-top: 6mm; font-size: 32pt; }
+  h2 { font-size: 19pt; break-after: avoid; }
+  h3, .dek { font-size: 14pt; }
+  .mast span, dt, .reference, code, caption, td, table thead { font-size: 9pt; }
+  section { padding-block: 4mm; }
+  .metadata { margin-block: 4mm; }
+  article { padding: 2mm 0 2mm 4mm; margin-top: 3mm; break-inside: avoid; }
+  .classification, p { margin-top: 2mm; }
+  .methods { break-before: page; }
+  table { break-inside: avoid; }
+  p { orphans: 2; widows: 2; }
+}

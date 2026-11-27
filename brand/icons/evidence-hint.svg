@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-labelledby="title">
+  <title id="title">Evidence hint</title>
+  <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="miter">
+    <path d="M9 4H5v16h4 M12 12h6"/>
+    <circle cx="18" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+  </g>
+</svg>
