@@ -22,7 +22,7 @@ code, nav, footer, .kicker, .downloads, .proof span, .logo-sample span, .palette
 nav, footer, .downloads { flex-wrap: wrap; }
 nav { gap: var(--logai-space-5); }
 nav a, footer a { text-decoration: none; }
-nav a:hover, footer a:hover, .logo-sample:hover span { text-decoration: underline; }
+nav a:hover, footer a:hover { text-decoration: underline; }
 .hero { display: grid; grid-template-columns: 1.2fr 1fr; align-items: stretch; gap: clamp(2rem, 6vw, 5rem); padding-block: var(--logai-space-7); }
 .intro { align-self: center; }
 .kicker { color: var(--logai-accent); }
@@ -55,6 +55,9 @@ h3 { font-size: var(--logai-font-size-subhead); line-height: 1.25; }
 .icon-group ul, .palette ul { list-style: none; padding: 0; display: grid; gap: var(--logai-space-3); }
 .icon-group ul { grid-template-columns: repeat(auto-fit,minmax(min(100%, 200px),1fr)); }
 .icon-group a { display: inline-flex; align-items: center; gap: var(--logai-space-3); text-decoration: none; }
+.icon-formats { margin: var(--logai-space-1) 0 0 36px; }
+.icon-formats a { text-decoration: underline; }
+.asset-downloads { display: flex; align-items: center; flex-wrap: wrap; gap: var(--logai-space-4); margin-bottom: var(--logai-space-6); }
 .icon-group a:hover code { text-decoration: underline; }
 .downloads { justify-content: flex-start; }
 .palettes, .types, .dimensions { margin-top: var(--logai-space-5); }

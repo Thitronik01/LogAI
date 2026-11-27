@@ -25,6 +25,10 @@ Measure clear space from the SVG viewport to nearby text, rules or artwork. At a
 | Tight spaces | Use the standalone mark at 16 × 16 px | Squeeze the entire wordmark into a 16 px icon |
 | Reproduction | Place the supplied one-ink artwork on plain stock | Add a shadow, redraw the bracket or close its opening |
 
+## PNG downloads
+
+The PNG pack includes the nine transparent logos, two surface variants of each of the eighteen icons, four favicons and both social images. Marks are 512 × 512 px, wordmarks are 2801 × 905 px and horizontal combinations are 1428 × 432 px. Icons are 192 × 192 px. The light and dark suffixes or folders identify the intended background. Evidence and policy icons use their respective palette roles. The archive also contains the image sheet and an AI-generated photographic cover study. [Download the PNG pack](exports/logai-randbeleg-png.zip) · [View the image sheet](preview/randbeleg-assets.png)
+
 ## Colour and typography
 
 The base palette pairs paper `#FBF9F2`, ink `#292723` and petrol `#145C51`. The dark palette pairs charcoal `#202522`, warm white `#F3F0E7` and mint `#89D1C2`. Text contrast against the main surface is 14.15:1 in light mode and 13.66:1 in dark mode. Accent contrast is 7.44:1 and 8.87:1 respectively. Use the rule colour for decorative dividers. Evidence and policy labels each have a dedicated ink, a shape and a visible name. [Palette and type specimens](preview/index.html#tokens)
