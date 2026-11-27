@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-labelledby="title">
+  <title id="title">Messkante</title>
+  <style>
+    :root { color: #205996; }
+    #dark:target ~ g { color: #98BFFC; }
+  </style>
+  <view id="dark" viewBox="0 0 32 32"/>
+  <g fill="currentColor">
+    <path d="M2 16h28v4h-4v6h-4v-6h-6v4h-4v-4H6v6H2z M19 9l5-5 5 5-5 5z"/>
+  </g>
+</svg>

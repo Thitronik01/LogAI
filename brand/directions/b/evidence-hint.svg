@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-labelledby="title">
+  <title id="title">Hint</title>
+  <style>
+    :root { color: #1F2932; }
+    #dark:target ~ g { color: #E5EFF6; }
+  </style>
+  <view id="dark" viewBox="0 0 24 24"/>
+  <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="miter">
+    <path d="M4 18h16 M12 15v5"/><path d="m12 4 3 3-3 3-3-3z" fill="currentColor" stroke="none"/>
+  </g>
+</svg>
