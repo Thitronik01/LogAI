@@ -1,0 +1,36 @@
+# Real log exports must never be committed. Synthetic fixtures are the only exception.
+*.log
+*.log.*
+access.log*
+!tests/fixtures/**
+
+# Reports written while trying the tool out
+/bericht/
+/report/
+/out/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+build/
+dist/
+*.egg-info/
+
+# Tool caches
+.hypothesis/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Files produced by the CI commands when run locally
+requirements-audit.txt
+sbom.cdx.json
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini

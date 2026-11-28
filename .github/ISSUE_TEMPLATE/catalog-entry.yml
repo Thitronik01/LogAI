@@ -1,0 +1,66 @@
+name: Catalog entry
+description: Propose a new AI service, or a change to an existing entry.
+labels: [catalog]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Every endpoint needs a verifiable source in the provider's own documentation. Endpoints without one are not accepted, because a wrong entry makes reports state things that are not true.
+
+        New entries start as `unreviewed` and are marked as such in reports until the maintainer has reviewed them.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind of proposal
+      options:
+        - New service
+        - Additional endpoint for an existing service
+        - Correction of an existing entry
+        - Removal
+    validations:
+      required: true
+  - type: input
+    id: service
+    attributes:
+      label: Service
+      description: The product as its provider names it. Products of one provider are separate entries, for example the chat application and the API.
+    validations:
+      required: true
+  - type: input
+    id: provider
+    attributes:
+      label: Provider
+    validations:
+      required: true
+  - type: textarea
+    id: endpoints
+    attributes:
+      label: Endpoints
+      description: |
+        One per line: host pattern, match (`exact` or `suffix`), kind (`web`, `api`, `auth` or `cdn`).
+      placeholder: |
+        chat.service.test, exact, web
+        api.service.test, suffix, api
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: The pages of the provider's documentation that name these endpoints, and the date on which you read them.
+    validations:
+      required: true
+  - type: textarea
+    id: legal
+    attributes:
+      label: Legal information (optional)
+      description: |
+        Provider's seat, hosting regions, use of data for training, availability of a data processing agreement. Each with a source. "unknown" is a valid answer, and so is "varies" when it depends on the plan.
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: The endpoints are taken from the linked provider documentation and are not guessed.
+          required: true

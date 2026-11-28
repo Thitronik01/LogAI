@@ -1,0 +1,5 @@
+# The maintainer reviews every change.
+*   @Thitronik01
+
+# Security-critical areas are parsers, file intake, pseudonymisation, report output and
+# catalog matching. When reviewers with security experience join, list them here per path.

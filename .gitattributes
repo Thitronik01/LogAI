@@ -1,0 +1,12 @@
+# Text files are stored and checked out with LF line endings on every platform.
+* text=auto eol=lf
+
+# Fixtures and golden files are compared byte for byte. Some fixtures are deliberately
+# malformed (line endings, encodings). Git must never convert them.
+tests/fixtures/** -text
+tests/golden/** -text
+
+*.ico binary
+*.png binary
+*.woff2 binary
+*.zip binary
