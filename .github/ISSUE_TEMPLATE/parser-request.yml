@@ -1,0 +1,49 @@
+name: Parser request
+description: Ask for support of another log format.
+labels: [parser]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Never paste real log data.** Logs contain personal data such as IP addresses, user names and visited hosts. Provide synthetic sample lines in the real format instead: `.test` host names and the documentation address ranges `192.0.2.0/24`, `198.51.100.0/24`, `203.0.113.0/24` and `2001:db8::/32`.
+  - type: input
+    id: product
+    attributes:
+      label: Product and version that writes the log
+    validations:
+      required: true
+  - type: input
+    id: documentation
+    attributes:
+      label: Documentation of the format
+      description: A link to the vendor's description of the log format, if there is one.
+  - type: textarea
+    id: sample
+    attributes:
+      label: Synthetic sample lines
+      description: A few lines in the exact format, with invented values. Include unusual cases you know of.
+      render: text
+    validations:
+      required: true
+  - type: checkboxes
+    id: fields
+    attributes:
+      label: What the log records
+      options:
+        - label: Timestamp
+        - label: Source address or user name
+        - label: Destination host name (not only an IP address)
+        - label: Bytes sent
+        - label: Bytes received
+        - label: Kind of event (DNS query, connection, blocked request)
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+  - type: checkboxes
+    id: no-real-data
+    attributes:
+      label: Data
+      options:
+        - label: This request contains no real log data.
+          required: true
