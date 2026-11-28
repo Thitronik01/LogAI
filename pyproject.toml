@@ -1,0 +1,134 @@
+[project]
+name = "logai-scan"
+version = "0.1.0.dev0"
+description = "Offline analysis of log exports that shows which AI services were reached from a network."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "The LogAI authors" }]
+keywords = ["audit", "dns", "logs", "offline", "privacy", "proxy"]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: System Administrators",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Security",
+    "Topic :: System :: Logging",
+    "Typing :: Typed",
+]
+# Runtime dependencies are added in the pull request that first uses them,
+# each with its purpose and the alternative that was considered.
+dependencies = []
+
+[project.scripts]
+logai = "logai_scan.cli:main"
+
+[project.urls]
+Repository = "https://github.com/Thitronik01/LogAI"
+Issues = "https://github.com/Thitronik01/LogAI/issues"
+Changelog = "https://github.com/Thitronik01/LogAI/blob/main/CHANGELOG.md"
+
+[build-system]
+requires = ["uv_build>=0.13.10,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = [
+    "A",    # shadowed builtins
+    "B",    # likely bugs
+    "BLE",  # blind `except`
+    "C4",   # comprehensions
+    "DTZ",  # naive datetimes
+    "E",    # pycodestyle errors
+    "F",    # pyflakes
+    "I",    # import order
+    "N",    # naming
+    "PERF", # avoidable overhead
+    "PT",   # pytest style
+    "PTH",  # pathlib instead of os.path
+    "RUF",  # ruff-specific checks
+    "S",    # security checks: eval, pickle, unsafe YAML loading, ...
+    "SIM",  # simplifications
+    "T20",  # no `print` in library code
+    "TID",  # banned imports, see below
+    "UP",   # outdated syntax
+    "W",    # pycodestyle warnings
+]
+
+[tool.ruff.lint.per-file-ignores]
+# Tests use `assert` and import network modules to prove that the guard works.
+"tests/**" = ["S101", "TID251"]
+# Scripts talk to the terminal.
+"scripts/**" = ["T20"]
+
+[tool.ruff.lint.flake8-tidy-imports]
+ban-relative-imports = "all"
+
+# The tool never accesses the network (docs/adr/0001-offline-at-runtime.md) and never
+# deserialises untrusted data into objects. These imports are therefore rejected at lint time.
+[tool.ruff.lint.flake8-tidy-imports.banned-api]
+"aiohttp".msg = "No network access at runtime (ADR 0001)."
+"ftplib".msg = "No network access at runtime (ADR 0001)."
+"http.client".msg = "No network access at runtime (ADR 0001)."
+"http.server".msg = "No network access at runtime (ADR 0001)."
+"httpx".msg = "No network access at runtime (ADR 0001)."
+"imaplib".msg = "No network access at runtime (ADR 0001)."
+"poplib".msg = "No network access at runtime (ADR 0001)."
+"requests".msg = "No network access at runtime (ADR 0001)."
+"smtplib".msg = "No network access at runtime (ADR 0001)."
+"socket".msg = "No network access at runtime (ADR 0001)."
+"socketserver".msg = "No network access at runtime (ADR 0001)."
+"ssl".msg = "No network access at runtime (ADR 0001)."
+"urllib.request".msg = "No network access at runtime (ADR 0001)."
+"urllib3".msg = "No network access at runtime (ADR 0001)."
+"webbrowser".msg = "No network access at runtime (ADR 0001)."
+"xmlrpc".msg = "No network access at runtime (ADR 0001)."
+"marshal".msg = "Logs, catalog and policy files are hostile input: no object deserialisation."
+"pickle".msg = "Logs, catalog and policy files are hostile input: no object deserialisation."
+"shelve".msg = "Logs, catalog and policy files are hostile input: no object deserialisation."
+
+[tool.pyright]
+include = ["src", "tests", "scripts"]
+extraPaths = ["scripts"]
+pythonVersion = "3.12"
+pythonPlatform = "All"
+typeCheckingMode = "strict"
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+pythonpath = ["scripts"]
+addopts = [
+    "-ra",
+    "--strict-config",
+    "--strict-markers",
+    "--import-mode=importlib",
+    "-p",
+    "pytester",
+]
+xfail_strict = true
+filterwarnings = ["error"]
+markers = [
+    "expects_blocked_network: the test deliberately triggers the network guard",
+]
+
+[dependency-groups]
+audit = [
+    "pip-audit>=2.10.1",
+]
+dev = [
+    "hypothesis>=6.170.22",
+    "pre-commit>=4.7.0",
+    "pyright[nodejs]>=1.1.414",
+    "pytest>=9.2.0",
+    "ruff>=0.17.6",
+]
