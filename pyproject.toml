@@ -40,6 +40,8 @@ build-backend = "uv_build"
 [tool.ruff]
 line-length = 100
 target-version = "py312"
+# brand/ is maintained separately and is not touched by this project's tooling.
+extend-exclude = ["brand"]
 
 [tool.ruff.lint]
 select = [

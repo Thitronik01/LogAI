@@ -9,3 +9,4 @@ tests/golden/** -text
 *.ico binary
 *.png binary
 *.woff2 binary
+*.zip binary

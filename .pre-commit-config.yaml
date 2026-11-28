@@ -2,6 +2,9 @@
 # environment, so its versions are defined in one place only: uv.lock.
 default_install_hook_types: [pre-commit, pre-push]
 
+# brand/ is maintained separately. No hook may check or rewrite its files.
+exclude: ^brand/
+
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: 3e8a8703264a2f4a69428a0aa4dcb512790b2c8c # frozen: v6.0.0
