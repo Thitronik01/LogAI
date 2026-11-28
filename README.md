@@ -1,4 +1,12 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="brand/logo/logai-logo-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="brand/logo/logai-logo-light.svg">
+  <img src="brand/logo/logai-logo-light.svg" alt="LogAI" width="238" height="72">
+</picture>
+
 # LogAI
+
+Local analysis of DNS, proxy and firewall exports for evidence of AI service activity.
 
 LogAI is an open-source command-line tool. It analyses existing log exports from DNS resolvers, proxies and firewalls on the machine where it runs, and shows which AI services were reached from a network. The result is a report in which every statement is backed by the logs, written for information security officers, data protection officers and auditors.
 
@@ -58,7 +66,7 @@ How to contribute: [CONTRIBUTING.md](CONTRIBUTING.md). How to report a vulnerabi
 
 ## Licence and name
 
-Code: Apache-2.0, see [LICENSE](LICENSE) and [NOTICE](NOTICE). The project name and logo are not covered by the code licence.
+Code: Apache-2.0, see [LICENSE](LICENSE) and [NOTICE](NOTICE). The project name and logo are not covered by the code licence; see [brand/TRADEMARK.md](brand/TRADEMARK.md).
 
 The name is provisional; see the open decisions in [docs/REPO_STRUCTURE.md](docs/REPO_STRUCTURE.md).
 

@@ -58,4 +58,4 @@ Aggregation starts on the standard library. The parsers read line by line in Pyt
 
 The report's texts are kept apart from its template, so that further languages can be added without touching the template. German comes first. Keys in JSON and CSV are English.
 
-The visual design will be taken from `brand/templates/report/` once it exists.
+The visual design follows the static reference in `brand/templates/report/` and the tokens in `brand/tokens/tokens.json`. Both are maintained separately and only read by this code.
